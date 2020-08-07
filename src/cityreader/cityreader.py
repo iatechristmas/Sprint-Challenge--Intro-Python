@@ -79,11 +79,99 @@ for c in cities:
 # TODO Get latitude and longitude values from the user
 
 
-def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
-    # within will hold the cities that fall within the specified region
-    within = []
+# first_coordinates = input(f'Enter lat1,lon1\n')
+# second_coordinates = input(f'Enter lat2, lon2\n')
 
-    # Go through each city and check to see if it falls within
-    # the specified coordinates.
+# first_lat = float(first_coordinates[0])
+# first_lon = float(first_coordinates[1])
+# second_lat = float(second_coordinates[0])
+# second_lon = float(second_coordinates[1])
+
+# from math import radians, cos, sin, asin, sqrt
+
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+#   within = []
+#   for city in cities:
+#     if city.lat > lat1 and city.lat < lat2 and city.lon > lon1 and city.lon < lon2:
+#       if city.lon > lon1 and city.lon < lon2 and city.lat > lat1 and city.lat < lat2:
+#         within.append(city)
+#   return within
+
+def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+    within = []
+    for city in cities:
+        if lat1 < city.lat < lat2 or lat1 > city.lat > lat2:
+            if lon1 < city.lon < lon2 or lon1 > city.lon > lon2:
+              print(city)
+              within.append(city)
     return within
+
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+#     lat1, lon1, lat2, lon2 = map(radians, [lat1, lon1, lat2, lon2])
+#     dlon = lon2 - lon1
+#     dlat = lat2 - lat1
+#     a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+#     c = 2 * asin(sqrt(a))
+#     r = 6371
+#     box = c * r
+
+
+# center_point = [{"lat": -7.7940023, "lng": 110.3656535}]
+# test_point = [{"lat": -7.79457, "lng": 110.36563}]
+
+# lat1 = center_point[0]["lat"]
+# lon1 = center_point[0]["lng"]
+# lat2 = test_point[0]["lat"]
+# lon2 = test_point[0]["lng"]
+
+# radius = 1.00  # in kilometer
+
+# a = haversine(lon1, lat1, lon2, lat2)
+
+# print("Distance (km) : ", a)
+# if a <= radius:
+#     print("Inside the area")
+# else:
+#     print("Outside the area")
+
+
+# def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
+
+#     # within will hold the cities that fall within the specified region
+#     
+
+#     # Go through each city and check to see if it falls within
+#     # the specified coordinates.
+
+#     return within
+
+    # Python3 program to Check
+
+# if a point lies on or
+# inside a rectangle | Set-2
+
+# function to find if
+# given point lies inside
+# a given rectangle or not.
+
+# Driver code
+# if __name__ == "__main__":
+
+#     # bottom-left and top-right
+#     # corners of rectangle.
+#     # use multiple assigment
+#     x1, y1, x2, y2 = 0, 0, 10, 8
+
+#     # given point
+#     x, y = 1, 5
+
+#     # function call
+#     if FindPoint(x1, y1, x2, y2, x, y):
+#         print("Yes")
+#     else:
+#         print("No")
+
+# This code is contributed
+# by Ankit Rai
+
 
